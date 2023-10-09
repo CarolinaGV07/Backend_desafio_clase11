@@ -5,6 +5,8 @@ import MongoStore from 'connect-mongo'
 import { Server } from 'socket.io'
 import mongoose from 'mongoose'
 import sessionRouter from './routes/session.router.js'
+import passport from 'passport'
+import initializePassport from './config/passport.config.js'
 import chatModel from './DAO/mongoManager/models/chat.model.js'
 import productModel from './DAO/mongoManager/models/product.model.js'
 import productRouter from './routes/product.router.js'
@@ -42,6 +44,11 @@ app.use(session ({
   resave: true,
   saveUninitialized: true
 }))
+
+//Passport
+initializePassport()
+app.use(passport.initialize())
+app.use(passport.session())
 
 //Rutas
 app.use('/', viewsRouter)

@@ -8,7 +8,7 @@ const UserModel = mongoose.model('users', new mongoose.Schema({
     password: String,
     role: {
         type: String,
-        default: 'usuario'
+        default: 'user'
     }
 }))
 

@@ -4,6 +4,7 @@ import chatModel from '../DAO/mongoManager/models/chat.model.js'
 import ProductModel from '../DAO/mongoManager/models/product.model.js'
 import cartModel from '../DAO/mongoManager/models/cart.model.js'
 import UserModel from '../DAO/mongoManager/models/user.model.js'
+import passport from 'passport'
 
 const router = Router()
 const productManager = new ProductManager()
